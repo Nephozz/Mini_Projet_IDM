@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="petrinet.Place"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.Resource"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.Resource.Factory"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.Resource.Factory.Registry"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.ResourceSet"/>
+    <fullyQualifiedTypeName name="simplepdl.SimplepdlPackage"/>
+    <fullyQualifiedTypeName name="simplepdl.WorkDefinition"/>
+</qualifiedTypeNameHistroy>
