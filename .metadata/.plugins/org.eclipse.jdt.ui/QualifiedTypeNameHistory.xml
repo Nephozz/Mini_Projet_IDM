@@ -8,4 +8,10 @@
     <fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.ResourceSet"/>
     <fullyQualifiedTypeName name="simplepdl.SimplepdlPackage"/>
     <fullyQualifiedTypeName name="simplepdl.WorkDefinition"/>
+    <fullyQualifiedTypeName name="petrinet.PetrinetFactory"/>
+    <fullyQualifiedTypeName name="petrinet.PetrinetPackage"/>
+    <fullyQualifiedTypeName name="petrinet.PetriNet"/>
+    <fullyQualifiedTypeName name="petrinet.ArcKind"/>
+    <fullyQualifiedTypeName name="simplepdl.WorkSequence"/>
+    <fullyQualifiedTypeName name="simplepdl.WorkSequenceType"/>
 </qualifiedTypeNameHistroy>

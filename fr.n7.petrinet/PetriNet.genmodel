@@ -18,19 +18,23 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PetriNet.ecore#//PetriNet/places"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PetriNet.ecore#//PetriNet/transitions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PetriNet.ecore#//PetriNet/arcs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//PetriNet/name"/>
     </genClasses>
     <genClasses ecoreClass="PetriNet.ecore#//Place">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Place/jeton"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PetriNet.ecore#//Place/arc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Place/name"/>
     </genClasses>
     <genClasses ecoreClass="PetriNet.ecore#//Transistion">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PetriNet.ecore#//Transistion/arc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Transistion/name"/>
     </genClasses>
     <genClasses ecoreClass="PetriNet.ecore#//Arc">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Arc/weight"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Arc/kind"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PetriNet.ecore#//Arc/place"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PetriNet.ecore#//Arc/transition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Arc/direction"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

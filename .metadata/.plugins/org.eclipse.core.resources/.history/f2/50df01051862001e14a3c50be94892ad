@@ -1,0 +1,40 @@
+/**
+ */
+package petrinet;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Transistion</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link petrinet.Transistion#getArc <em>Arc</em>}</li>
+ * </ul>
+ *
+ * @see petrinet.PetrinetPackage#getTransistion()
+ * @model
+ * @generated
+ */
+public interface Transistion extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Arc</b></em>' reference list.
+	 * The list contents are of type {@link petrinet.Arc}.
+	 * It is bidirectional and its opposite is '{@link petrinet.Arc#getTransition <em>Transition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Arc</em>' reference list.
+	 * @see petrinet.PetrinetPackage#getTransistion_Arc()
+	 * @see petrinet.Arc#getTransition
+	 * @model opposite="transition"
+	 * @generated
+	 */
+	EList<Arc> getArc();
+
+} // Transistion

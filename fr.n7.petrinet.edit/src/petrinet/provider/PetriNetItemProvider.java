@@ -13,12 +13,14 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -61,8 +63,31 @@ public class PetriNetItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PetriNet_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PetriNet_name_feature", "_UI_PetriNet_type"),
+				 PetrinetPackage.Literals.PETRI_NET__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -116,7 +141,10 @@ public class PetriNetItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_PetriNet_type");
+		String label = ((PetriNet)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_PetriNet_type") :
+			getString("_UI_PetriNet_type") + " " + label;
 	}
 
 
@@ -132,6 +160,9 @@ public class PetriNetItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PetriNet.class)) {
+			case PetrinetPackage.PETRI_NET__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case PetrinetPackage.PETRI_NET__PLACES:
 			case PetrinetPackage.PETRI_NET__TRANSITIONS:
 			case PetrinetPackage.PETRI_NET__ARCS:

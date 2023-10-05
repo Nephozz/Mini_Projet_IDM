@@ -2,20 +2,12 @@
  */
 package simplepdl.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import simplepdl.RessourceNeeded;
 import simplepdl.RessourceType;
 import simplepdl.SimplepdlPackage;
@@ -36,14 +28,24 @@ import simplepdl.SimplepdlPackage;
  */
 public class RessourceNeededImpl extends MinimalEObjectImpl.Container implements RessourceNeeded {
 	/**
-	 * The cached value of the '{@link #getQuantityNeeded() <em>Quantity Needed</em>}' attribute list.
+	 * The default value of the '{@link #getQuantityNeeded() <em>Quantity Needed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getQuantityNeeded()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Integer> quantityNeeded;
+	protected static final int QUANTITY_NEEDED_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getQuantityNeeded() <em>Quantity Needed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuantityNeeded()
+	 * @generated
+	 * @ordered
+	 */
+	protected int quantityNeeded = QUANTITY_NEEDED_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getRessource() <em>Ressource</em>}' reference.
@@ -79,11 +81,20 @@ public class RessourceNeededImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Integer> getQuantityNeeded() {
-		if (quantityNeeded == null) {
-			quantityNeeded = new EDataTypeUniqueEList<Integer>(Integer.class, this, SimplepdlPackage.RESSOURCE_NEEDED__QUANTITY_NEEDED);
-		}
+	public int getQuantityNeeded() {
 		return quantityNeeded;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setQuantityNeeded(int newQuantityNeeded) {
+		int oldQuantityNeeded = quantityNeeded;
+		quantityNeeded = newQuantityNeeded;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SimplepdlPackage.RESSOURCE_NEEDED__QUANTITY_NEEDED, oldQuantityNeeded, quantityNeeded));
 	}
 
 	/**
@@ -151,8 +162,7 @@ public class RessourceNeededImpl extends MinimalEObjectImpl.Container implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SimplepdlPackage.RESSOURCE_NEEDED__QUANTITY_NEEDED:
-				getQuantityNeeded().clear();
-				getQuantityNeeded().addAll((Collection<? extends Integer>)newValue);
+				setQuantityNeeded((Integer)newValue);
 				return;
 			case SimplepdlPackage.RESSOURCE_NEEDED__RESSOURCE:
 				setRessource((RessourceType)newValue);
@@ -170,7 +180,7 @@ public class RessourceNeededImpl extends MinimalEObjectImpl.Container implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SimplepdlPackage.RESSOURCE_NEEDED__QUANTITY_NEEDED:
-				getQuantityNeeded().clear();
+				setQuantityNeeded(QUANTITY_NEEDED_EDEFAULT);
 				return;
 			case SimplepdlPackage.RESSOURCE_NEEDED__RESSOURCE:
 				setRessource((RessourceType)null);
@@ -188,7 +198,7 @@ public class RessourceNeededImpl extends MinimalEObjectImpl.Container implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SimplepdlPackage.RESSOURCE_NEEDED__QUANTITY_NEEDED:
-				return quantityNeeded != null && !quantityNeeded.isEmpty();
+				return quantityNeeded != QUANTITY_NEEDED_EDEFAULT;
 			case SimplepdlPackage.RESSOURCE_NEEDED__RESSOURCE:
 				return ressource != null;
 		}

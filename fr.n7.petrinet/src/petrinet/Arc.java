@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link petrinet.Arc#getKind <em>Kind</em>}</li>
  *   <li>{@link petrinet.Arc#getPlace <em>Place</em>}</li>
  *   <li>{@link petrinet.Arc#getTransition <em>Transition</em>}</li>
+ *   <li>{@link petrinet.Arc#getDirection <em>Direction</em>}</li>
  * </ul>
  *
  * @see petrinet.PetrinetPackage#getArc()
@@ -47,7 +48,7 @@ public interface Arc extends EObject {
 	 * @see petrinet.ArcKind
 	 * @see #setKind(ArcKind)
 	 * @see petrinet.PetrinetPackage#getArc_Kind()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	ArcKind getKind();
@@ -110,5 +111,30 @@ public interface Arc extends EObject {
 	 * @generated
 	 */
 	void setTransition(Transistion value);
+
+	/**
+	 * Returns the value of the '<em><b>Direction</b></em>' attribute.
+	 * The literals are from the enumeration {@link petrinet.ArcDirection}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Direction</em>' attribute.
+	 * @see petrinet.ArcDirection
+	 * @see #setDirection(ArcDirection)
+	 * @see petrinet.PetrinetPackage#getArc_Direction()
+	 * @model required="true"
+	 * @generated
+	 */
+	ArcDirection getDirection();
+
+	/**
+	 * Sets the value of the '{@link petrinet.Arc#getDirection <em>Direction</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Direction</em>' attribute.
+	 * @see petrinet.ArcDirection
+	 * @see #getDirection()
+	 * @generated
+	 */
+	void setDirection(ArcDirection value);
 
 } // Arc

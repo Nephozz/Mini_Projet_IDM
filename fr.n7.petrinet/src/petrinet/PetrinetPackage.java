@@ -95,13 +95,22 @@ public interface PetrinetPackage extends EPackage {
 	int PETRI_NET__ARCS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PETRI_NET__NAME = 3;
+
+	/**
 	 * The number of structural features of the '<em>Petri Net</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PETRI_NET_FEATURE_COUNT = 3;
+	int PETRI_NET_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Petri Net</em>' class.
@@ -141,13 +150,22 @@ public interface PetrinetPackage extends EPackage {
 	int PLACE__ARC = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACE__NAME = 2;
+
+	/**
 	 * The number of structural features of the '<em>Place</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE_FEATURE_COUNT = 2;
+	int PLACE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Place</em>' class.
@@ -178,13 +196,22 @@ public interface PetrinetPackage extends EPackage {
 	int TRANSISTION__ARC = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSISTION__NAME = 1;
+
+	/**
 	 * The number of structural features of the '<em>Transistion</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSISTION_FEATURE_COUNT = 1;
+	int TRANSISTION_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Transistion</em>' class.
@@ -242,13 +269,22 @@ public interface PetrinetPackage extends EPackage {
 	int ARC__TRANSITION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARC__DIRECTION = 4;
+
+	/**
 	 * The number of structural features of the '<em>Arc</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARC_FEATURE_COUNT = 4;
+	int ARC_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Arc</em>' class.
@@ -324,6 +360,17 @@ public interface PetrinetPackage extends EPackage {
 	EReference getPetriNet_Arcs();
 
 	/**
+	 * Returns the meta object for the attribute '{@link petrinet.PetriNet#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see petrinet.PetriNet#getName()
+	 * @see #getPetriNet()
+	 * @generated
+	 */
+	EAttribute getPetriNet_Name();
+
+	/**
 	 * Returns the meta object for class '{@link petrinet.Place <em>Place</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -356,6 +403,17 @@ public interface PetrinetPackage extends EPackage {
 	EReference getPlace_Arc();
 
 	/**
+	 * Returns the meta object for the attribute '{@link petrinet.Place#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see petrinet.Place#getName()
+	 * @see #getPlace()
+	 * @generated
+	 */
+	EAttribute getPlace_Name();
+
+	/**
 	 * Returns the meta object for class '{@link petrinet.Transistion <em>Transistion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -375,6 +433,17 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTransistion_Arc();
+
+	/**
+	 * Returns the meta object for the attribute '{@link petrinet.Transistion#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see petrinet.Transistion#getName()
+	 * @see #getTransistion()
+	 * @generated
+	 */
+	EAttribute getTransistion_Name();
 
 	/**
 	 * Returns the meta object for class '{@link petrinet.Arc <em>Arc</em>}'.
@@ -429,6 +498,17 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getArc_Transition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link petrinet.Arc#getDirection <em>Direction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Direction</em>'.
+	 * @see petrinet.Arc#getDirection()
+	 * @see #getArc()
+	 * @generated
+	 */
+	EAttribute getArc_Direction();
 
 	/**
 	 * Returns the meta object for enum '{@link petrinet.ArcDirection <em>Arc Direction</em>}'.
@@ -508,6 +588,14 @@ public interface PetrinetPackage extends EPackage {
 		EReference PETRI_NET__ARCS = eINSTANCE.getPetriNet_Arcs();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PETRI_NET__NAME = eINSTANCE.getPetriNet_Name();
+
+		/**
 		 * The meta object literal for the '{@link petrinet.impl.PlaceImpl <em>Place</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -534,6 +622,14 @@ public interface PetrinetPackage extends EPackage {
 		EReference PLACE__ARC = eINSTANCE.getPlace_Arc();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLACE__NAME = eINSTANCE.getPlace_Name();
+
+		/**
 		 * The meta object literal for the '{@link petrinet.impl.TransistionImpl <em>Transistion</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -550,6 +646,14 @@ public interface PetrinetPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRANSISTION__ARC = eINSTANCE.getTransistion_Arc();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRANSISTION__NAME = eINSTANCE.getTransistion_Name();
 
 		/**
 		 * The meta object literal for the '{@link petrinet.impl.ArcImpl <em>Arc</em>}' class.
@@ -592,6 +696,14 @@ public interface PetrinetPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ARC__TRANSITION = eINSTANCE.getArc_Transition();
+
+		/**
+		 * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARC__DIRECTION = eINSTANCE.getArc_Direction();
 
 		/**
 		 * The meta object literal for the '{@link petrinet.ArcDirection <em>Arc Direction</em>}' enum.

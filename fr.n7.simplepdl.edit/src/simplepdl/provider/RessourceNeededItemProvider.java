@@ -129,7 +129,8 @@ public class RessourceNeededItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_RessourceNeeded_type");
+		RessourceNeeded ressourceNeeded = (RessourceNeeded)object;
+		return getString("_UI_RessourceNeeded_type") + " " + ressourceNeeded.getQuantityNeeded();
 	}
 
 

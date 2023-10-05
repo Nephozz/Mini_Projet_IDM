@@ -18,9 +18,12 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import petrinet.PetrinetPackage;
+import petrinet.Transistion;
 
 /**
  * This is the item provider adapter for a {@link petrinet.Transistion} object.
@@ -58,6 +61,7 @@ public class TransistionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addArcPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,6 +89,28 @@ public class TransistionItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transistion_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transistion_name_feature", "_UI_Transistion_type"),
+				 PetrinetPackage.Literals.TRANSISTION__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Transistion.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,7 +129,10 @@ public class TransistionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Transistion_type");
+		String label = ((Transistion)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Transistion_type") :
+			getString("_UI_Transistion_type") + " " + label;
 	}
 
 
@@ -117,6 +146,12 @@ public class TransistionItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Transistion.class)) {
+			case PetrinetPackage.TRANSISTION__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

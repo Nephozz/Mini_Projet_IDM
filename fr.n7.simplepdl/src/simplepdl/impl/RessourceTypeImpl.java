@@ -2,18 +2,10 @@
  */
 package simplepdl.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import simplepdl.RessourceType;
 import simplepdl.SimplepdlPackage;
 
@@ -53,14 +45,24 @@ public class RessourceTypeImpl extends ProcessElementImpl implements RessourceTy
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' attribute list.
+	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getQuantity()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Integer> quantity;
+	protected static final int QUANTITY_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuantity()
+	 * @generated
+	 * @ordered
+	 */
+	protected int quantity = QUANTITY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -107,11 +109,20 @@ public class RessourceTypeImpl extends ProcessElementImpl implements RessourceTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Integer> getQuantity() {
-		if (quantity == null) {
-			quantity = new EDataTypeUniqueEList<Integer>(Integer.class, this, SimplepdlPackage.RESSOURCE_TYPE__QUANTITY);
-		}
+	public int getQuantity() {
 		return quantity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setQuantity(int newQuantity) {
+		int oldQuantity = quantity;
+		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SimplepdlPackage.RESSOURCE_TYPE__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -143,8 +154,7 @@ public class RessourceTypeImpl extends ProcessElementImpl implements RessourceTy
 				setName((String)newValue);
 				return;
 			case SimplepdlPackage.RESSOURCE_TYPE__QUANTITY:
-				getQuantity().clear();
-				getQuantity().addAll((Collection<? extends Integer>)newValue);
+				setQuantity((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -162,7 +172,7 @@ public class RessourceTypeImpl extends ProcessElementImpl implements RessourceTy
 				setName(NAME_EDEFAULT);
 				return;
 			case SimplepdlPackage.RESSOURCE_TYPE__QUANTITY:
-				getQuantity().clear();
+				setQuantity(QUANTITY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -179,7 +189,7 @@ public class RessourceTypeImpl extends ProcessElementImpl implements RessourceTy
 			case SimplepdlPackage.RESSOURCE_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SimplepdlPackage.RESSOURCE_TYPE__QUANTITY:
-				return quantity != null && !quantity.isEmpty();
+				return quantity != QUANTITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

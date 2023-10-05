@@ -65,6 +65,7 @@ public class ArcItemProvider
 			addKindPropertyDescriptor(object);
 			addPlacePropertyDescriptor(object);
 			addTransitionPropertyDescriptor(object);
+			addDirectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -158,6 +159,28 @@ public class ArcItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Direction feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDirectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Arc_direction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Arc_direction_feature", "_UI_Arc_type"),
+				 PetrinetPackage.Literals.ARC__DIRECTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Arc.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -198,6 +221,7 @@ public class ArcItemProvider
 		switch (notification.getFeatureID(Arc.class)) {
 			case PetrinetPackage.ARC__WEIGHT:
 			case PetrinetPackage.ARC__KIND:
+			case PetrinetPackage.ARC__DIRECTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

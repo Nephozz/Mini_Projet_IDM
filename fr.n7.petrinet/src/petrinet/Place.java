@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link petrinet.Place#getJeton <em>Jeton</em>}</li>
  *   <li>{@link petrinet.Place#getArc <em>Arc</em>}</li>
+ *   <li>{@link petrinet.Place#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see petrinet.PetrinetPackage#getPlace()
@@ -49,5 +50,27 @@ public interface Place extends EObject {
 	 * @generated
 	 */
 	EList<Arc> getArc();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see petrinet.PetrinetPackage#getPlace_Name()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link petrinet.Place#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // Place

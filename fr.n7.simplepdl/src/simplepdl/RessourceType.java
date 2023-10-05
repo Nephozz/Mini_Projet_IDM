@@ -2,8 +2,6 @@
  */
 package simplepdl;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Ressource Type</b></em>'.
@@ -45,15 +43,25 @@ public interface RessourceType extends ProcessElement {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Quantity</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Integer}.
+	 * Returns the value of the '<em><b>Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quantity</em>' attribute list.
+	 * @return the value of the '<em>Quantity</em>' attribute.
+	 * @see #setQuantity(int)
 	 * @see simplepdl.SimplepdlPackage#getRessourceType_Quantity()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Integer> getQuantity();
+	int getQuantity();
+
+	/**
+	 * Sets the value of the '{@link simplepdl.RessourceType#getQuantity <em>Quantity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Quantity</em>' attribute.
+	 * @see #getQuantity()
+	 * @generated
+	 */
+	void setQuantity(int value);
 
 } // RessourceType

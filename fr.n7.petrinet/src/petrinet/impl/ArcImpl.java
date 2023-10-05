@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 import petrinet.Arc;
+import petrinet.ArcDirection;
 import petrinet.ArcKind;
 import petrinet.PetrinetPackage;
 import petrinet.Place;
@@ -35,6 +36,7 @@ import petrinet.Transistion;
  *   <li>{@link petrinet.impl.ArcImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link petrinet.impl.ArcImpl#getPlace <em>Place</em>}</li>
  *   <li>{@link petrinet.impl.ArcImpl#getTransition <em>Transition</em>}</li>
+ *   <li>{@link petrinet.impl.ArcImpl#getDirection <em>Direction</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,6 +91,26 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * @ordered
 	 */
 	protected Transistion transition;
+
+	/**
+	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDirection()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ArcDirection DIRECTION_EDEFAULT = ArcDirection.P2T;
+
+	/**
+	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDirection()
+	 * @generated
+	 * @ordered
+	 */
+	protected ArcDirection direction = DIRECTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -267,6 +289,27 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ArcDirection getDirection() {
+		return direction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDirection(ArcDirection newDirection) {
+		ArcDirection oldDirection = direction;
+		direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PetrinetPackage.ARC__DIRECTION, oldDirection, direction));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -316,6 +359,8 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 			case PetrinetPackage.ARC__TRANSITION:
 				if (resolve) return getTransition();
 				return basicGetTransition();
+			case PetrinetPackage.ARC__DIRECTION:
+				return getDirection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -342,6 +387,9 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 			case PetrinetPackage.ARC__TRANSITION:
 				setTransition((Transistion)newValue);
 				return;
+			case PetrinetPackage.ARC__DIRECTION:
+				setDirection((ArcDirection)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -366,6 +414,9 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 			case PetrinetPackage.ARC__TRANSITION:
 				setTransition((Transistion)null);
 				return;
+			case PetrinetPackage.ARC__DIRECTION:
+				setDirection(DIRECTION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -386,6 +437,8 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 				return place != null;
 			case PetrinetPackage.ARC__TRANSITION:
 				return transition != null;
+			case PetrinetPackage.ARC__DIRECTION:
+				return direction != DIRECTION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -404,6 +457,8 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 		result.append(weight);
 		result.append(", kind: ");
 		result.append(kind);
+		result.append(", direction: ");
+		result.append(direction);
 		result.append(')');
 		return result.toString();
 	}

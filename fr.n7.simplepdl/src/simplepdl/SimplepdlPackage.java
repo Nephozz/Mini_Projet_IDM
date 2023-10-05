@@ -114,7 +114,7 @@ public interface SimplepdlPackage extends EPackage {
 	int RESSOURCE_NEEDED = 1;
 
 	/**
-	 * The feature id for the '<em><b>Quantity Needed</b></em>' attribute list.
+	 * The feature id for the '<em><b>Quantity Needed</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -316,7 +316,7 @@ public interface SimplepdlPackage extends EPackage {
 	int RESSOURCE_TYPE__NAME = PROCESS_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Quantity</b></em>' attribute list.
+	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -442,10 +442,10 @@ public interface SimplepdlPackage extends EPackage {
 	EClass getRessourceNeeded();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link simplepdl.RessourceNeeded#getQuantityNeeded <em>Quantity Needed</em>}'.
+	 * Returns the meta object for the attribute '{@link simplepdl.RessourceNeeded#getQuantityNeeded <em>Quantity Needed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Quantity Needed</em>'.
+	 * @return the meta object for the attribute '<em>Quantity Needed</em>'.
 	 * @see simplepdl.RessourceNeeded#getQuantityNeeded()
 	 * @see #getRessourceNeeded()
 	 * @generated
@@ -495,10 +495,10 @@ public interface SimplepdlPackage extends EPackage {
 	EAttribute getRessourceType_Name();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link simplepdl.RessourceType#getQuantity <em>Quantity</em>}'.
+	 * Returns the meta object for the attribute '{@link simplepdl.RessourceType#getQuantity <em>Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Quantity</em>'.
+	 * @return the meta object for the attribute '<em>Quantity</em>'.
 	 * @see simplepdl.RessourceType#getQuantity()
 	 * @see #getRessourceType()
 	 * @generated
@@ -704,7 +704,7 @@ public interface SimplepdlPackage extends EPackage {
 		EClass RESSOURCE_NEEDED = eINSTANCE.getRessourceNeeded();
 
 		/**
-		 * The meta object literal for the '<em><b>Quantity Needed</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Quantity Needed</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -748,7 +748,7 @@ public interface SimplepdlPackage extends EPackage {
 		EAttribute RESSOURCE_TYPE__NAME = eINSTANCE.getRessourceType_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Quantity</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

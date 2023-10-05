@@ -2,8 +2,6 @@
  */
 package simplepdl;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -25,16 +23,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface RessourceNeeded extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Quantity Needed</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Integer}.
+	 * Returns the value of the '<em><b>Quantity Needed</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quantity Needed</em>' attribute list.
+	 * @return the value of the '<em>Quantity Needed</em>' attribute.
+	 * @see #setQuantityNeeded(int)
 	 * @see simplepdl.SimplepdlPackage#getRessourceNeeded_QuantityNeeded()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Integer> getQuantityNeeded();
+	int getQuantityNeeded();
+
+	/**
+	 * Sets the value of the '{@link simplepdl.RessourceNeeded#getQuantityNeeded <em>Quantity Needed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Quantity Needed</em>' attribute.
+	 * @see #getQuantityNeeded()
+	 * @generated
+	 */
+	void setQuantityNeeded(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Ressource</b></em>' reference.

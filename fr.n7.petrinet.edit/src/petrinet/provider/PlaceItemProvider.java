@@ -62,6 +62,7 @@ public class PlaceItemProvider
 
 			addJetonPropertyDescriptor(object);
 			addArcPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,6 +112,28 @@ public class PlaceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Place_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Place_name_feature", "_UI_Place_type"),
+				 PetrinetPackage.Literals.PLACE__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Place.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,7 +152,10 @@ public class PlaceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Place_type");
+		String label = ((Place)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Place_type") :
+			getString("_UI_Place_type") + " " + label;
 	}
 
 
@@ -146,6 +172,7 @@ public class PlaceItemProvider
 
 		switch (notification.getFeatureID(Place.class)) {
 			case PetrinetPackage.PLACE__JETON:
+			case PetrinetPackage.PLACE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
