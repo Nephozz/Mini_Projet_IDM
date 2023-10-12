@@ -2,8 +2,6 @@
  */
 package petrinet;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -28,16 +26,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Arc extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Weight</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Integer}.
+	 * Returns the value of the '<em><b>Weight</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Weight</em>' attribute list.
+	 * @return the value of the '<em>Weight</em>' attribute.
+	 * @see #setWeight(int)
 	 * @see petrinet.PetrinetPackage#getArc_Weight()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Integer> getWeight();
+	int getWeight();
+
+	/**
+	 * Sets the value of the '{@link petrinet.Arc#getWeight <em>Weight</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Weight</em>' attribute.
+	 * @see #getWeight()
+	 * @generated
+	 */
+	void setWeight(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
@@ -90,17 +98,17 @@ public interface Arc extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Transition</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link petrinet.Transistion#getArc <em>Arc</em>}'.
+	 * It is bidirectional and its opposite is '{@link petrinet.Transition#getArc <em>Arc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Transition</em>' reference.
-	 * @see #setTransition(Transistion)
+	 * @see #setTransition(Transition)
 	 * @see petrinet.PetrinetPackage#getArc_Transition()
-	 * @see petrinet.Transistion#getArc
+	 * @see petrinet.Transition#getArc
 	 * @model opposite="arc"
 	 * @generated
 	 */
-	Transistion getTransition();
+	Transition getTransition();
 
 	/**
 	 * Sets the value of the '{@link petrinet.Arc#getTransition <em>Transition</em>}' reference.
@@ -110,7 +118,7 @@ public interface Arc extends EObject {
 	 * @see #getTransition()
 	 * @generated
 	 */
-	void setTransition(Transistion value);
+	void setTransition(Transition value);
 
 	/**
 	 * Returns the value of the '<em><b>Direction</b></em>' attribute.

@@ -14,8 +14,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -40,14 +38,24 @@ import petrinet.Place;
  */
 public class PlaceImpl extends MinimalEObjectImpl.Container implements Place {
 	/**
-	 * The cached value of the '{@link #getJeton() <em>Jeton</em>}' attribute list.
+	 * The default value of the '{@link #getJeton() <em>Jeton</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getJeton()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Integer> jeton;
+	protected static final int JETON_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getJeton() <em>Jeton</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJeton()
+	 * @generated
+	 * @ordered
+	 */
+	protected int jeton = JETON_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getArc() <em>Arc</em>}' reference list.
@@ -103,11 +111,20 @@ public class PlaceImpl extends MinimalEObjectImpl.Container implements Place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Integer> getJeton() {
-		if (jeton == null) {
-			jeton = new EDataTypeUniqueEList<Integer>(Integer.class, this, PetrinetPackage.PLACE__JETON);
-		}
+	public int getJeton() {
 		return jeton;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setJeton(int newJeton) {
+		int oldJeton = jeton;
+		jeton = newJeton;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PetrinetPackage.PLACE__JETON, oldJeton, jeton));
 	}
 
 	/**
@@ -200,8 +217,7 @@ public class PlaceImpl extends MinimalEObjectImpl.Container implements Place {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PetrinetPackage.PLACE__JETON:
-				getJeton().clear();
-				getJeton().addAll((Collection<? extends Integer>)newValue);
+				setJeton((Integer)newValue);
 				return;
 			case PetrinetPackage.PLACE__ARC:
 				getArc().clear();
@@ -223,7 +239,7 @@ public class PlaceImpl extends MinimalEObjectImpl.Container implements Place {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PetrinetPackage.PLACE__JETON:
-				getJeton().clear();
+				setJeton(JETON_EDEFAULT);
 				return;
 			case PetrinetPackage.PLACE__ARC:
 				getArc().clear();
@@ -244,7 +260,7 @@ public class PlaceImpl extends MinimalEObjectImpl.Container implements Place {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PetrinetPackage.PLACE__JETON:
-				return jeton != null && !jeton.isEmpty();
+				return jeton != JETON_EDEFAULT;
 			case PetrinetPackage.PLACE__ARC:
 				return arc != null && !arc.isEmpty();
 			case PetrinetPackage.PLACE__NAME:

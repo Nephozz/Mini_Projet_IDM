@@ -1,0 +1,9 @@
+import 'PetriNet.ecore'
+
+package petrinet
+
+context PetriNet
+
+
+
+endpackage

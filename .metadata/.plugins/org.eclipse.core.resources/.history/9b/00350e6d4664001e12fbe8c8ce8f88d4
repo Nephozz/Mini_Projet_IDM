@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module main('')/]
+[import fr::n7::simplepdl::todot::main::todot/]
+
+
+[template public mainOclAny(aOclAny : OclAny)]
+	
+	[comment @main /]
+	[aOclAny.processtodot()/]
+	
+[/template]

@@ -2,27 +2,19 @@
  */
 package petrinet.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import petrinet.Arc;
 import petrinet.ArcDirection;
 import petrinet.ArcKind;
 import petrinet.PetrinetPackage;
 import petrinet.Place;
-import petrinet.Transistion;
+import petrinet.Transition;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,14 +35,24 @@ import petrinet.Transistion;
  */
 public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	/**
-	 * The cached value of the '{@link #getWeight() <em>Weight</em>}' attribute list.
+	 * The default value of the '{@link #getWeight() <em>Weight</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWeight()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Integer> weight;
+	protected static final int WEIGHT_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getWeight() <em>Weight</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWeight()
+	 * @generated
+	 * @ordered
+	 */
+	protected int weight = WEIGHT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
@@ -90,7 +92,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * @generated
 	 * @ordered
 	 */
-	protected Transistion transition;
+	protected Transition transition;
 
 	/**
 	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -136,11 +138,20 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Integer> getWeight() {
-		if (weight == null) {
-			weight = new EDataTypeUniqueEList<Integer>(Integer.class, this, PetrinetPackage.ARC__WEIGHT);
-		}
+	public int getWeight() {
 		return weight;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setWeight(int newWeight) {
+		int oldWeight = weight;
+		weight = newWeight;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PetrinetPackage.ARC__WEIGHT, oldWeight, weight));
 	}
 
 	/**
@@ -229,10 +240,10 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Transistion getTransition() {
+	public Transition getTransition() {
 		if (transition != null && transition.eIsProxy()) {
 			InternalEObject oldTransition = (InternalEObject)transition;
-			transition = (Transistion)eResolveProxy(oldTransition);
+			transition = (Transition)eResolveProxy(oldTransition);
 			if (transition != oldTransition) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PetrinetPackage.ARC__TRANSITION, oldTransition, transition));
@@ -246,7 +257,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Transistion basicGetTransition() {
+	public Transition basicGetTransition() {
 		return transition;
 	}
 
@@ -255,8 +266,8 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTransition(Transistion newTransition, NotificationChain msgs) {
-		Transistion oldTransition = transition;
+	public NotificationChain basicSetTransition(Transition newTransition, NotificationChain msgs) {
+		Transition oldTransition = transition;
 		transition = newTransition;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PetrinetPackage.ARC__TRANSITION, oldTransition, newTransition);
@@ -270,13 +281,13 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTransition(Transistion newTransition) {
+	public void setTransition(Transition newTransition) {
 		if (newTransition != transition) {
 			NotificationChain msgs = null;
 			if (transition != null)
-				msgs = ((InternalEObject)transition).eInverseRemove(this, PetrinetPackage.TRANSISTION__ARC, Transistion.class, msgs);
+				msgs = ((InternalEObject)transition).eInverseRemove(this, PetrinetPackage.TRANSITION__ARC, Transition.class, msgs);
 			if (newTransition != null)
-				msgs = ((InternalEObject)newTransition).eInverseAdd(this, PetrinetPackage.TRANSISTION__ARC, Transistion.class, msgs);
+				msgs = ((InternalEObject)newTransition).eInverseAdd(this, PetrinetPackage.TRANSITION__ARC, Transition.class, msgs);
 			msgs = basicSetTransition(newTransition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -319,8 +330,8 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 				return basicSetPlace((Place)otherEnd, msgs);
 			case PetrinetPackage.ARC__TRANSITION:
 				if (transition != null)
-					msgs = ((InternalEObject)transition).eInverseRemove(this, PetrinetPackage.TRANSISTION__ARC, Transistion.class, msgs);
-				return basicSetTransition((Transistion)otherEnd, msgs);
+					msgs = ((InternalEObject)transition).eInverseRemove(this, PetrinetPackage.TRANSITION__ARC, Transition.class, msgs);
+				return basicSetTransition((Transition)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -370,13 +381,12 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
+
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PetrinetPackage.ARC__WEIGHT:
-				getWeight().clear();
-				getWeight().addAll((Collection<? extends Integer>)newValue);
+				setWeight((Integer)newValue);
 				return;
 			case PetrinetPackage.ARC__KIND:
 				setKind((ArcKind)newValue);
@@ -385,7 +395,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 				setPlace((Place)newValue);
 				return;
 			case PetrinetPackage.ARC__TRANSITION:
-				setTransition((Transistion)newValue);
+				setTransition((Transition)newValue);
 				return;
 			case PetrinetPackage.ARC__DIRECTION:
 				setDirection((ArcDirection)newValue);
@@ -403,7 +413,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PetrinetPackage.ARC__WEIGHT:
-				getWeight().clear();
+				setWeight(WEIGHT_EDEFAULT);
 				return;
 			case PetrinetPackage.ARC__KIND:
 				setKind(KIND_EDEFAULT);
@@ -412,7 +422,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 				setPlace((Place)null);
 				return;
 			case PetrinetPackage.ARC__TRANSITION:
-				setTransition((Transistion)null);
+				setTransition((Transition)null);
 				return;
 			case PetrinetPackage.ARC__DIRECTION:
 				setDirection(DIRECTION_EDEFAULT);
@@ -430,7 +440,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PetrinetPackage.ARC__WEIGHT:
-				return weight != null && !weight.isEmpty();
+				return weight != WEIGHT_EDEFAULT;
 			case PetrinetPackage.ARC__KIND:
 				return kind != KIND_EDEFAULT;
 			case PetrinetPackage.ARC__PLACE:

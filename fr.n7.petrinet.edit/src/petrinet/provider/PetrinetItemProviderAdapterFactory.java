@@ -118,26 +118,26 @@ public class PetrinetItemProviderAdapterFactory extends PetrinetAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link petrinet.Transistion} instances.
+	 * This keeps track of the one adapter used for all {@link petrinet.Transition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TransistionItemProvider transistionItemProvider;
+	protected TransitionItemProvider transitionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link petrinet.Transistion}.
+	 * This creates an adapter for a {@link petrinet.Transition}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createTransistionAdapter() {
-		if (transistionItemProvider == null) {
-			transistionItemProvider = new TransistionItemProvider(this);
+	public Adapter createTransitionAdapter() {
+		if (transitionItemProvider == null) {
+			transitionItemProvider = new TransitionItemProvider(this);
 		}
 
-		return transistionItemProvider;
+		return transitionItemProvider;
 	}
 
 	/**
@@ -264,7 +264,7 @@ public class PetrinetItemProviderAdapterFactory extends PetrinetAdapterFactory i
 	public void dispose() {
 		if (petriNetItemProvider != null) petriNetItemProvider.dispose();
 		if (placeItemProvider != null) placeItemProvider.dispose();
-		if (transistionItemProvider != null) transistionItemProvider.dispose();
+		if (transitionItemProvider != null) transitionItemProvider.dispose();
 		if (arcItemProvider != null) arcItemProvider.dispose();
 	}
 

@@ -40,7 +40,7 @@ public interface PetriNet extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Transitions</b></em>' containment reference list.
-	 * The list contents are of type {@link petrinet.Transistion}.
+	 * The list contents are of type {@link petrinet.Transition}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Transitions</em>' containment reference list.
@@ -48,7 +48,7 @@ public interface PetriNet extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Transistion> getTransitions();
+	EList<Transition> getTransitions();
 
 	/**
 	 * Returns the value of the '<em><b>Arcs</b></em>' containment reference list.

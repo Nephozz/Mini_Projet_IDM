@@ -1,5 +1,3 @@
-/**
- */
 package petrinet.presentation;
 
 import java.util.ArrayList;

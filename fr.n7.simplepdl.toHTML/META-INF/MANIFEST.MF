@@ -20,4 +20,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-14
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: fr.n7.simplepdl.toHTML.main
+Automatic-Module-Name: fr.n7.simplepdl.toHTML
 

@@ -1,8 +1,0 @@
-import 'SimplePDL.ecore'
-
-package simplepdl
-
-context WorkDefinition
-
-
-endpackage

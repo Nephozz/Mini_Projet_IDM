@@ -14,4 +14,5 @@
     <fullyQualifiedTypeName name="petrinet.ArcKind"/>
     <fullyQualifiedTypeName name="simplepdl.WorkSequence"/>
     <fullyQualifiedTypeName name="simplepdl.WorkSequenceType"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>

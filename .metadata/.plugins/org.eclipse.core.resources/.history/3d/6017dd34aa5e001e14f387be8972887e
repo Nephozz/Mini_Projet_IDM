@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Simplepdl2petrinet
-Bundle-SymbolicName: fr.n7.simplepdl2petrinet
-Bundle-Version: 1.0.0.qualifier
-Automatic-Module-Name: fr.n7.simplepdl2petrinet
-Bundle-RequiredExecutionEnvironment: JavaSE-14

@@ -22,7 +22,7 @@ import petrinet.Arc;
 import petrinet.PetriNet;
 import petrinet.PetrinetPackage;
 import petrinet.Place;
-import petrinet.Transistion;
+import petrinet.Transition;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ public class PetriNetImpl extends MinimalEObjectImpl.Container implements PetriN
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Transistion> transitions;
+	protected EList<Transition> transitions;
 
 	/**
 	 * The cached value of the '{@link #getArcs() <em>Arcs</em>}' containment reference list.
@@ -127,9 +127,9 @@ public class PetriNetImpl extends MinimalEObjectImpl.Container implements PetriN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Transistion> getTransitions() {
+	public EList<Transition> getTransitions() {
 		if (transitions == null) {
-			transitions = new EObjectContainmentEList<Transistion>(Transistion.class, this, PetrinetPackage.PETRI_NET__TRANSITIONS);
+			transitions = new EObjectContainmentEList<Transition>(Transition.class, this, PetrinetPackage.PETRI_NET__TRANSITIONS);
 		}
 		return transitions;
 	}
@@ -220,7 +220,7 @@ public class PetriNetImpl extends MinimalEObjectImpl.Container implements PetriN
 				return;
 			case PetrinetPackage.PETRI_NET__TRANSITIONS:
 				getTransitions().clear();
-				getTransitions().addAll((Collection<? extends Transistion>)newValue);
+				getTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
 			case PetrinetPackage.PETRI_NET__ARCS:
 				getArcs().clear();

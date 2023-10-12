@@ -1,6 +1,5 @@
 package petrinet.manip;
 
-import java.util.Collections;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -14,6 +13,7 @@ import petrinet.PetrinetPackage;
 
 public class PetriNetManipulator {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 		// Chargement du package SimplePDL afin de l'enregistrer dans le registre d'Eclipse.

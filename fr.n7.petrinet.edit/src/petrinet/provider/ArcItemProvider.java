@@ -23,7 +23,6 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import petrinet.Arc;
-import petrinet.ArcKind;
 import petrinet.PetrinetPackage;
 
 /**
@@ -199,11 +198,8 @@ public class ArcItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		ArcKind labelValue = ((Arc)object).getKind();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Arc_type") :
-			getString("_UI_Arc_type") + " " + label;
+		Arc arc = (Arc)object;
+		return getString("_UI_Arc_type") + " " + arc.getWeight();
 	}
 
 

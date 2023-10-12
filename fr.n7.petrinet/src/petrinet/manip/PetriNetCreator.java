@@ -16,6 +16,7 @@ import petrinet.PetrinetPackage;
 
 public class PetriNetCreator {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 		// Charger le package SimplePDL afin de l'enregistrer dans le registre d'Eclipse.

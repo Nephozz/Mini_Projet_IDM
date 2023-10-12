@@ -59,7 +59,7 @@ public class PetrinetFactoryImpl extends EFactoryImpl implements PetrinetFactory
 		switch (eClass.getClassifierID()) {
 			case PetrinetPackage.PETRI_NET: return createPetriNet();
 			case PetrinetPackage.PLACE: return createPlace();
-			case PetrinetPackage.TRANSISTION: return createTransistion();
+			case PetrinetPackage.TRANSITION: return createTransition();
 			case PetrinetPackage.ARC: return createArc();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -125,9 +125,9 @@ public class PetrinetFactoryImpl extends EFactoryImpl implements PetrinetFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Transistion createTransistion() {
-		TransistionImpl transistion = new TransistionImpl();
-		return transistion;
+	public Transition createTransition() {
+		TransitionImpl transition = new TransitionImpl();
+		return transition;
 	}
 
 	/**

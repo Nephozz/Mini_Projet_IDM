@@ -1,0 +1,16 @@
+import 'PetriNet.ecore'
+
+package petrinet
+
+context PetriNet
+inv validName('Invalid name: ' + self.name):
+	self.name.matches('[A-Za-z_][A-Za-z0-9_]*')
+
+inv nameIsDefined:
+	if self.name.oclIsUndefined() then
+		false
+	else
+		self.name.size() > 1
+	endif
+
+endpackage

@@ -26,16 +26,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Place extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Jeton</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Integer}.
+	 * Returns the value of the '<em><b>Jeton</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Jeton</em>' attribute list.
+	 * @return the value of the '<em>Jeton</em>' attribute.
+	 * @see #setJeton(int)
 	 * @see petrinet.PetrinetPackage#getPlace_Jeton()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Integer> getJeton();
+	int getJeton();
+
+	/**
+	 * Sets the value of the '{@link petrinet.Place#getJeton <em>Jeton</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Jeton</em>' attribute.
+	 * @see #getJeton()
+	 * @generated
+	 */
+	void setJeton(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Arc</b></em>' reference list.
