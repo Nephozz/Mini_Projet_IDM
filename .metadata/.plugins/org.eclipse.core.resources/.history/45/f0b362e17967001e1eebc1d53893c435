@@ -1,7 +1,0 @@
-import 'PetriNet.ecore'
-
-package petrinet
-
-
-
-endpackage

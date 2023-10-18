@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="toHTML" name="fr.n7.simplepdl.toHTML">
-    <property name="ECLIPSE_HOME" value="../../../gls-v2020/eclipse-gls"/>
+    <property name="ECLIPSE_HOME" value="../../../eclipse/modeling-latest-released/eclipse"/>
     <property name="ECLIPSE_WORKSPACE" value="../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->

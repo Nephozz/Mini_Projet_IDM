@@ -4,7 +4,7 @@ Bundle-Name: Simplepdl2petrinet
 Bundle-SymbolicName: fr.n7.simplepdl2petrinet
 Bundle-Version: 1.0.0.qualifier
 Automatic-Module-Name: fr.n7.simplepdl2petrinet
-Bundle-RequiredExecutionEnvironment: JavaSE-14
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: fr.n7.simplepdl;bundle-version="1.0.0",
  fr.n7.petrinet;bundle-version="1.0.0",
  org.eclipse.emf.ecore.xmi

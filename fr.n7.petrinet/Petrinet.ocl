@@ -18,9 +18,9 @@ inv uniqueName:
     self.name->collect(e | e.oclAsType(Place) )
     ->forAll(pl1, pl2 | pl1 = pl2 or pl1.name <> pl2.name)
     
-context Transistion
+context Transition
 inv uniqueName:
-    self.name->collect(e | e.oclAsType(Transistion) )
+    self.name->collect(e | e.oclAsType(Transition) )
     ->forAll(tr1, tr2 | tr1 = tr2 or tr1.name <> tr2.name)
 
 context Arc
