@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move &apos;PetriNet_developpement.xmi&apos; to &apos;fr.n7.petrinet.totina&apos;" description="Move &apos;PetriNet_developpement.xmi&apos; to &apos;fr.n7.petrinet.totina&apos;" destination="/fr.n7.petrinet.totina" element1="/fr.n7.simplepdl2petrinet/models/PetriNet_developpement.xmi" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1697547953753" updateReferences="true"/>
-</session>

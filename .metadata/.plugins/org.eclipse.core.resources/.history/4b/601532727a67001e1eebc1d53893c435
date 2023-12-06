@@ -1,5 +1,0 @@
-source.. = src/
-output.. = bin/
-bin.includes = src/simplepdl/impl/META-INF/,\
-               .
-jre.compilation.profile = JavaSE-14
